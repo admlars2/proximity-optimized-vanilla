@@ -7,15 +7,16 @@ services:
     environment:
       EULA: "TRUE"
       TYPE: "FABRIC"
-      PACKWIZ_URL: "https://raw.githubusercontent.com/<you>/mc-fabric-pack/main/pack.toml"
+      VERSION: "1.21.6"
+      PACKWIZ_URL: "https://raw.githubusercontent.com/admlars2/proximity-optimized-vanilla/main/pack.toml"
       MODRINTH_DOWNLOAD_DEPENDENCIES: "required"
       MEMORY: "6G"
       
       ENABLE_WHITELIST: "TRUE"
-      WHITELIST: "Cosmo642\nLaw47"
+      WHITELIST: "YourUsername"
     
     volumes:
-      - ./data:/data              # whitelist and world data
+      - ./data:/data              # persistant data
     
     ports:
       - "25565:25565/tcp"         # Minecraft
