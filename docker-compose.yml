@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  mc-fabric:
+    image: itzg/minecraft-server:latest
+    container_name: proximity-optimized-vanilla
+    environment:
+      EULA: "TRUE"
+      TYPE: "FABRIC"
+      PACKWIZ_URL: "https://raw.githubusercontent.com/<you>/mc-fabric-pack/main/pack.toml"
+      MODRINTH_DOWNLOAD_DEPENDENCIES: "required"
+      MEMORY: "6G"
+      
+      ENABLE_WHITELIST: "TRUE"
+      WHITELIST: "Cosmo642\nLaw47"
+    
+    volumes:
+      - ./data:/data              # whitelist and world data
+    
+    ports:
+      - "25565:25565/tcp"         # Minecraft
+      - "24454:24454/udp"         # Simple VC
+    
+    restart: unless-stopped
