@@ -1,19 +1,24 @@
-version: "3.8"
-
 services:
   mc-fabric:
     image: itzg/minecraft-server:latest
     container_name: proximity-optimized-vanilla
     environment:
-      EULA: "TRUE"
+      EULA: "TRUE"              # Make sure to read Minecrafts EULA
       TYPE: "FABRIC"
       VERSION: "1.21.6"
       PACKWIZ_URL: "https://raw.githubusercontent.com/admlars2/proximity-optimized-vanilla/main/pack.toml"
       MODRINTH_DOWNLOAD_DEPENDENCIES: "required"
       MEMORY: "6G"
+
+      ENABLE_AUTOSTOP: "FALSE"
       
+      DIFFICULTY: "HARD"
+      SEED: "custom-seed"
       ENABLE_WHITELIST: "TRUE"
       WHITELIST: "YourUsername"
+      SPAWN_PROTECTION: "0"
+      SIMULATION_DISTANCE: "6"
+      VIEW_DISTANCE: "10"
     
     volumes:
       - ./data:/data              # persistant data
