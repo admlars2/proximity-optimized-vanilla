@@ -5,10 +5,10 @@ services:
     environment:
       EULA: "TRUE"              # Make sure to read Minecrafts EULA
       TYPE: "FABRIC"
-      VERSION: "1.21.6"
+      VERSION: "1.21.10"
       PACKWIZ_URL: "https://raw.githubusercontent.com/admlars2/proximity-optimized-vanilla/main/pack.toml"
       MODRINTH_DOWNLOAD_DEPENDENCIES: "required"
-      MEMORY: "6G"
+      MEMORY: "8G"
 
       ENABLE_AUTOSTOP: "FALSE"
       
